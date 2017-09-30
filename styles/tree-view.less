@@ -7,6 +7,15 @@
     border-right: 1px solid @base-border-color;
 }
 
+.tab-bar .tab.active[data-type=TreeView] {
+    height: 10px;
+    line-height: 10px;
+    border-top: 1px solid transparent;
+    .title {
+        display: none;
+    }
+}
+
 .tree-view {
     color: @text-color;
     background-color: @tree-view-background-color;
