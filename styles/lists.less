@@ -29,6 +29,45 @@
     color: @text-color-selected;
   }
 }
+.list-group,
+.list-tree {
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    color: @text-color;
+  }
+
+  .generate-list-item-text-color(@color, @class) {
+    li:not(.list-nested-item).text-@{class},
+    li.list-nested-item.text-@{class} > .list-item {
+      color: @text-color;
+    }
+  }
+  .generate-list-item-text-color(@text-color-subtle, subtle);
+  .generate-list-item-text-color(@text-color-info, info);
+  .generate-list-item-text-color(@text-color-success, success);
+  .generate-list-item-text-color(@text-color-warning, warning);
+  .generate-list-item-text-color(@text-color-error, error);
+  .generate-list-item-text-color(@text-color-selected, selected);
+
+  .generate-list-item-status-color(@color, @status) {
+    li:not(.list-nested-item).status-@{status},
+    li.list-nested-item.status-@{status} > .list-item {
+      color: @color;
+    }
+
+    li:not(.list-nested-item).selected.status-@{status},
+    li.list-nested-item.selected.status-@{status} > .list-item {
+      color: @color;
+    }
+
+  }
+
+  .generate-list-item-status-color(@text-color-success, added);
+  .generate-list-item-status-color(@text-color-subtle, ignored);
+  .generate-list-item-status-color(@text-color-warning, modified);
+  .generate-list-item-status-color(@text-color-error, removed);
+  .generate-list-item-status-color(@text-color-info, renamed);
+}
 
 
 // Select List -------------------
